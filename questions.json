@@ -1,0 +1,182 @@
+[
+  {
+    "id": "Q-C06-001",
+    "bloque": "T",
+    "q": "Un cliente envía 40 llamadas seguidas a una API pública. ¿Qué control limita ese abuso sin cambiar el código?",
+    "a": [
+      "Subir el tiempo de espera de la función AWS Lambda",
+      "Activar Multi-AZ en la tabla de Amazon DynamoDB",
+      "Un plan de uso con límites de tasa y cuota en API Gateway",
+      "Cifrar el bucket de Amazon S3 con una llave de AWS KMS"
+    ],
+    "t": 30
+  },
+  {
+    "id": "Q-C06-002",
+    "bloque": "T",
+    "q": "Una Lambda solo inserta respuestas en la tabla quiz-respuestas. ¿Qué permiso del rol cumple el menor privilegio?",
+    "a": [
+      "dynamodb:PutItem solo sobre el ARN de la tabla quiz-respuestas",
+      "dynamodb:* sobre todos los recursos de la cuenta",
+      "La política administrada AmazonDynamoDBFullAccess",
+      "dynamodb:PutItem y dynamodb:DeleteTable sobre la tabla"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-003",
+    "bloque": "T",
+    "q": "Un quiz guarda solo un alias generado, sin nombres ni correos. ¿Qué buena práctica de privacidad aplica?",
+    "a": [
+      "Cifrado en tránsito con TLS entre el navegador y la API",
+      "Minimización de datos: guardar solo lo estrictamente necesario",
+      "Replicación de la tabla a otra Región de AWS",
+      "Autenticación multifactor para los usuarios finales"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-004",
+    "bloque": "T",
+    "q": "Se abre una API pública de pruebas. ¿Qué combinación evita MEJOR cobros inesperados?",
+    "a": [
+      "Un Savings Plan de tres años para el cómputo",
+      "Hosts dedicados para aislar las funciones",
+      "Desactivar el registro de las llamadas a la API",
+      "Una alerta en AWS Budgets y una cuota diaria en el plan de uso"
+    ],
+    "t": 30
+  },
+  {
+    "id": "Q-C06-005",
+    "bloque": "T",
+    "q": "Auditoría pide saber QUIÉN eliminó una tabla de DynamoDB. ¿Qué servicio registra las llamadas a la API de la cuenta?",
+    "a": [
+      "Amazon Inspector",
+      "AWS CloudTrail",
+      "Amazon CloudFront",
+      "AWS Trusted Advisor"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C05-002",
+    "bloque": "CLF",
+    "q": "Athena cobra por datos leídos y se consulta varias veces un CSV grande. ¿Qué cambio reduce MÁS el costo?",
+    "a": [
+      "Mover los archivos a S3 Glacier Deep Archive",
+      "Convertir a Parquet particionado por fecha",
+      "Consultar desde una instancia EC2 más grande",
+      "Duplicar el CSV en otra Región de AWS"
+    ],
+    "t": 30
+  },
+  {
+    "id": "Q-C05-003",
+    "bloque": "CLF",
+    "q": "¿Qué almacena el AWS Glue Data Catalog?",
+    "a": [
+      "Los archivos de datos de cada tabla",
+      "Las llaves que cifran los datos de S3",
+      "Los registros de auditoría de las consultas",
+      "Metadatos: esquema, formato y ubicación de los datos"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-006",
+    "bloque": "CLF",
+    "q": "Una app guarda respuestas por pregunta y alumno, y lista las de una pregunta. ¿Qué llave de DynamoDB conviene?",
+    "a": [
+      "Partición pregunta_id y orden alias",
+      "Partición fija 'quiz' para todos los ítems",
+      "Partición con la fecha del día y sin orden",
+      "Sin llave de orden y consulta con Scan"
+    ],
+    "t": 30
+  },
+  {
+    "id": "Q-C06-007",
+    "bloque": "CLF",
+    "q": "Un mensaje de SQS falla 5 veces al procesarse. ¿Dónde debe acabar para no bloquear la cola?",
+    "a": [
+      "Se borra solo y no deja rastro",
+      "Regresa a la cola principal indefinidamente",
+      "En una cola de mensajes fallidos (DLQ) para revisarlo",
+      "En S3 Glacier para archivo de largo plazo"
+    ],
+    "t": 30
+  },
+  {
+    "id": "Q-C06-008",
+    "bloque": "CLF",
+    "q": "Un equipo quiere que quiz.midominio.mx abra su sitio. ¿Qué servicio de AWS administra el DNS?",
+    "a": [
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "AWS Global Accelerator",
+      "Amazon API Gateway"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-009",
+    "bloque": "AIF",
+    "q": "Una web debe usar Amazon Bedrock sin exponer credenciales en el navegador. ¿Qué arquitectura aplica?",
+    "a": [
+      "JavaScript que llama a Bedrock con llaves de acceso en la página",
+      "Llaves guardadas en un bucket de S3 con lectura pública",
+      "Usar el usuario raíz de la cuenta desde el navegador",
+      "Página, API Gateway y Lambda con rol IAM que invoca el modelo"
+    ],
+    "t": 30
+  },
+  {
+    "id": "Q-C06-010",
+    "bloque": "AIF",
+    "q": "Antes de entrenar un modelo, se eliminan respuestas duplicadas y vacías. ¿Qué etapa del ciclo de ML es?",
+    "a": [
+      "Preparación de datos",
+      "Despliegue del modelo",
+      "Monitoreo del modelo",
+      "Evaluación del modelo"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-011",
+    "bloque": "AIF",
+    "q": "Un modelo predice si un alumno acertará (sí o no) según su historial. ¿Qué tipo de problema de ML es?",
+    "a": [
+      "Regresión",
+      "Agrupamiento (clustering)",
+      "Clasificación",
+      "Aprendizaje por refuerzo"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-012",
+    "bloque": "AIF",
+    "q": "Un asistente de IA generativa explica con seguridad una respuesta errónea. ¿Cómo se llama ese riesgo?",
+    "a": [
+      "Sobreajuste (overfitting)",
+      "Alucinación",
+      "Deriva de datos (drift)",
+      "Latencia"
+    ],
+    "t": 20
+  },
+  {
+    "id": "Q-C06-013",
+    "bloque": "AIF",
+    "q": "Un equipo sin experiencia en ML quiere un modelo fundacional por API, sin administrar infraestructura. ¿Qué elige?",
+    "a": [
+      "Amazon EC2 con GPU y un modelo propio",
+      "Amazon Redshift con consultas SQL",
+      "Amazon Lightsail con un servidor web",
+      "Amazon Bedrock"
+    ],
+    "t": 20
+  }
+]

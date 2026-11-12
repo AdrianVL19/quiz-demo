@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https: http://localhost:* http://127.0.0.1:*; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0f1216">
+  <title>Quiz · Cómputo en la Nube</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <p class="brand">Quiz <span class="brand-sub">Cómputo en la Nube</span></p>
+      <p class="alias">Tu alias <span class="alias-value" id="alias">…</span></p>
+    </header>
+
+    <div class="progress" id="progress" role="progressbar" aria-label="Avance del quiz"
+         aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div class="stage" id="stage">
+      <section class="card">
+        <p class="status-line">Cargando preguntas…</p>
+      </section>
+    </div>
+
+    <noscript>
+      <p class="noscript">Este quiz necesita JavaScript para funcionar. Actívalo y recarga la página.</p>
+    </noscript>
+
+    <footer class="foot">
+      <p>Sin registro ni datos personales: solo se envía tu alias aleatorio con cada respuesta.</p>
+      <p class="keys-hint">Teclado: <kbd>1</kbd>–<kbd>4</kbd> para elegir, <kbd>Enter</kbd> para continuar.</p>
+    </footer>
+  </main>
+</body>
+</html>
